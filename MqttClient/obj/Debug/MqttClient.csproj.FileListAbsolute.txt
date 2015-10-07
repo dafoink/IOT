@@ -1,0 +1,10 @@
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\bin\Debug\MqttClient.exe.config
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\bin\Debug\MqttClient.exe
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\bin\Debug\MqttClient.pdb
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\bin\Debug\M2Mqtt.Net.dll
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\bin\Debug\M2Mqtt.Net.pdb
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\obj\Debug\MqttClient.csprojResolveAssemblyReference.cache
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\obj\Debug\MqttClient.exe
+E:\Source\Brians Playground\mqtt\MqttClient\MqttClient\obj\Debug\MqttClient.pdb
+E:\Source\Brians Playground\MQTT\MQTTClient\MqttClient\bin\Debug\Newtonsoft.Json.dll
+E:\Source\Brians Playground\MQTT\MQTTClient\MqttClient\bin\Debug\Newtonsoft.Json.xml

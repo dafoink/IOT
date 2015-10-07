@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MqttClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BrokerIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.1.14</Value>
+    </Setting>
+    <Setting Name="ApplicationListURI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://yourserver.com/tables/application</Value>
+    </Setting>
+    <Setting Name="APIHeaders" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">[{"name":"X-ZUMO-APPLICATION", "value":"yourAppKey"}]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

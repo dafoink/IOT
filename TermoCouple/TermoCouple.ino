@@ -3,12 +3,18 @@
 #include <ESP8266WiFi.h>
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
+#include <ESP_SSD1306.h>
+#include <Adafruit_GFX.h>
+#include <gfxfont.h>
 
 #define OLED_RESET 4
 
 int ktcSO = 12;
 int ktcCS = 13;
 int ktcCLK = 14;
+
+/************************* OLED Definitions **********************************/
+#define OLED_RESET  16  // Pin 15 -RESET digital signal
 
 MAX6675 ktc(ktcCLK, ktcCS, ktcSO);
 
@@ -23,6 +29,7 @@ MAX6675 ktc(ktcCLK, ktcCS, ktcSO);
 #define AIO_SERVERPORT  1883 
 #define AIO_USERNAME    "<Your Adafruit Username>"
 #define AIO_KEY         "<Your AIO Key>"
+
 
 /************ Global State (you don't need to change this!) ******************/
 
@@ -39,21 +46,27 @@ const char MQTT_PASSWORD[] PROGMEM = AIO_KEY;
 // Setup the MQTT client class by passing in the WiFi client and MQTT server and login details.
 Adafruit_MQTT_Client mqtt(&client, MQTT_SERVER, AIO_SERVERPORT, MQTT_CLIENTID, MQTT_USERNAME, MQTT_PASSWORD);
 
+// OLED Stuff
+ESP_SSD1306 display(OLED_RESET); // FOR I2C
 
 void setup() {
-  Serial.begin(115200);
-  delay(1000);
+	Serial.begin(115200);
+	delay(1000);
 
-  WiFi.begin(WLAN_SSID, WLAN_PASS);
-  while (WiFi.status() != WL_CONNECTED) {
-	  delay(500);
-	  Serial.print(".");
-  }
-  Serial.println();
+	display.begin(SSD1306_SWITCHCAPVCC);  // Switch OLED
+	  //display.clearDisplay();
+	display.display();
 
-  Serial.println("WiFi connected");
-  Serial.println("IP address: "); Serial.println(WiFi.localIP());
-  
+	WiFi.begin(WLAN_SSID, WLAN_PASS);
+	while (WiFi.status() != WL_CONNECTED) {
+		delay(500);
+		Serial.print(".");
+	}
+	Serial.println();
+
+	Serial.println("WiFi connected");
+	Serial.println("IP address: "); Serial.println(WiFi.localIP());
+
 }
 
 void loop() {
@@ -67,11 +80,16 @@ void loop() {
 	double celsius = ktc.readCelsius();
 	Serial.print(celsius);
 
+	//dtostrf(celsius, 4, 2, buf);
+	//mqtt.publish("ct/d/111/TEMPC", buf);
+
+
 	Serial.print("\t F = ");
 	double fahrenheit = ktc.readFahrenheit();
 	Serial.println(fahrenheit);
 	dtostrf(fahrenheit, 4, 2, buf);
 	mqtt.publish("<your adafruit username>/f/<Your Feed Name>", buf);
+	writeText(buf, 1, 4, true);
 	delay(1000);
 }
 
@@ -94,5 +112,19 @@ void MQTT_connect() {
 		delay(5000);  // wait 5 seconds
 	}
 	Serial.println("MQTT Connected!");
+}
+
+void writeText(String messageString, int row, int textSize, bool clearScreen)
+{
+	if (clearScreen)
+	{
+		display.clearDisplay();
+		display.setTextSize(textSize);
+		display.setTextColor(WHITE);
+	}
+
+	display.setCursor(row, 0);
+	display.println(messageString);
+	display.display();
 }
 

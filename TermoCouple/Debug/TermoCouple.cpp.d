@@ -56,4 +56,9 @@ C:\Users\bwharton\AppData\Local\Temp\VMicroBuilds\TermoCouple\esp8266_nodemcuv2\
  C:\Users\bwharton\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src/include/ssl.h \
  E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit_MQTT_Library/Adafruit_MQTT.h \
  E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit_MQTT_Library/Adafruit_MQTT_Client.h \
- E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit_MQTT_Library/Adafruit_MQTT.h
+ E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit_MQTT_Library/Adafruit_MQTT.h \
+ E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\ESP_SSD1306-master/ESP_SSD1306.h \
+ C:\Users\bwharton\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\SPI/SPI.h \
+ E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit-GFX-Library-master/Adafruit_GFX.h \
+ E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit-GFX-Library-master/gfxfont.h \
+ E:\Source\Brians\ Playground\Microcontrollers\arduino\libraries\Adafruit-GFX-Library-master/gfxfont.h
